@@ -1,26 +1,27 @@
 <template>
-  <the-navbar :visible="isAuth"></the-navbar>
+  <the-navbar :visible="isAuth" />
   <div class="container with-nav">
-    <router-view></router-view>
+    <router-view />
 </div>
 </template>
 
 <script>
-import TheNavbar from './components/TheNavbar'
+import TheNavbar from './components/TheNavbar';
 
 export default {
   data() {
     return {
-      isAuth: true
+      isAuth: false
     }
   },
   methods: {
     login() {
       this.isAuth = true
+
       if (this.$route.query.page) {
-        this.$router.replace(this.$route.query.page)
+        this.$router.replace(this.$route.query.page);
       } else {
-        this.$router.replace('/dashboard') // replace не сохраняет наши переходы в историю
+        this.$router.replace('/dashboard'); // replace не сохраняет наши переходы в историю
       }
     },
     logout() {
@@ -39,16 +40,13 @@ export default {
       login: this.login,
       logout: this.logout,
       emails: [
-        {id: 1, theme: 'Купил себе PlayStation 5'},
-        {id: 2, theme: 'Выучил Vue Router'},
-        {id: 3, theme: 'Хочу изучить весь Vue'},
-        {id: 4, theme: 'А следующий блок про Vuex!'},
-        {id: 5, theme: 'А что там на счет Vue Hooks?'}
+        {id: 1, theme: 'Письмо 1'},
+        {id: 2, theme: 'Письмо 2'},
+        {id: 3, theme: 'Письмо 3'},
+        {id: 4, theme: 'Письмо 4'},
+        {id: 5, theme: 'Письмо 5'}
       ]
     }
   }
 }
 </script>
-
-<style>
-</style>

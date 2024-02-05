@@ -2,7 +2,11 @@
   <div class="card no-padding">
     <div class="card-nav">
       <ul class="list">
-        <li class="list-item" v-for="email in emails" :key="email.id">
+        <li
+          class="list-item"
+          v-for="email in emails"
+          :key="email.id"
+        >
           <router-link :to="`/mail/${email.id}`">
             {{email.theme}}
           </router-link>
@@ -10,13 +14,12 @@
       </ul>
     </div>
     <div class="card-body">
-      <router-view></router-view>
+      <router-view />
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   inject: ['emails'],
 }

@@ -20,15 +20,8 @@ export default {
   inject: ['emails'],
   computed: {
     email() {
-      return this.emails.find(mail => mail.id == this.mailId)
+      return this.emails.find(mail => mail.id == this.mailId);
     }
   },
-  mounted() {
-    console.log(this.email)
-  }
 }
 </script>
-
-<style scoped>
-
-</style>

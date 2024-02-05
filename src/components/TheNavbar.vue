@@ -1,16 +1,35 @@
 <template>
-  <header class="navbar" v-if="visible">
+  <header
+    class="navbar"
+    v-if="visible">
     <h3>GMail</h3>
     <ul class="navbar-menu">
-      <li><router-link :to="{name: 'home'}">Главная</router-link></li>
       <li>
-        <router-link to="/mail" custom #="{ navigate, href }">
-          <a href="#" @click="navigate" :class="{
-            active: $route.path.indexOf(href) !== -1
-          }">Почта</a>
+        <router-link :to="{name: 'home'}">Главная</router-link>
+      </li>
+      <li>
+        <router-link
+          to="/mail"
+          custom #="{ navigate, href }"
+          >
+          <a
+            href="#"
+            @click="navigate"
+            :class="{
+              active: $route.path.indexOf(href) !== -1
+            }"
+          >
+            Почта
+          </a>
         </router-link>
       </li>
-      <li><a href="#" @click.prevent="logout">Выйти</a></li>
+      <li>
+        <a 
+          href="#"
+          @click.prevent="logout">
+            Выйти
+        </a>
+      </li>
     </ul>
   </header>
 </template>
